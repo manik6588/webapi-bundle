@@ -1,6 +1,7 @@
 {
     "name": "webapi/webapi-bundle",
     "type": "symfony-bundle",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "manik6588",

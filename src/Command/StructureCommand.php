@@ -1,16 +1,20 @@
 <?php
 
-namespace WebAPI\Structure\Command;
+namespace WebAPIBundle\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
+use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
+use Symfony\Component\Filesystem\Filesystem;
 
 class StructureCommand extends Command
 {
 
+    protected static $defaultName = 'webapi:structure:create';
+    
     protected string $structure;
 
     public function __construct()
@@ -21,7 +25,7 @@ class StructureCommand extends Command
 
     protected function configure()
     {
-        $this->setName('webapi:structure');
+        $this->setName('webapi:structure:create');
         $this->setDescription('Generates the Structure class.');
         $this->setHelp('Type webapi:make:structure [Structure Class Name] to generate the structure class.');
         $this->addArgument('class', InputArgument::REQUIRED, 'Structure Class name.');
@@ -144,25 +148,37 @@ FUNCTION;
 
         $this->generateStructure($className, $this->getFields($io));
 
-        $filePath = "./src/Structure/" . $className . ".php";
+        $directory = "./src/Structure/";
+        $filePath = $directory . $className . ".php";
 
-        $fileHandle = fopen($filePath, "w");
+        $filesystem = new Filesystem();
 
-        if ($fileHandle === false) {
-            $io->error('Failed to create structure class file.');
+        try {
+            $filesystem->dumpFile($filePath, $this->structure);
+            $io->success('Success.');
+            return Command::SUCCESS;
+        } catch (IOExceptionInterface $ioe) {
+            $io->error($ioe);
             return Command::FAILURE;
-        } else {
-            // Write content to the file
-            if (fwrite($fileHandle, $this->structure) === false) {
-                $io->error('Failed to create structure class file.');
-                return Command::FAILURE;
-            } else {
-                $io->success('Success.');
-                return Command::SUCCESS;
-            }
-
-            // Close the file handle
-            fclose($fileHandle);
         }
+
+        // $fileHandle = fopen($filePath, "w");
+
+        // if ($fileHandle === false) {
+        //     $io->error('Failed to create structure class file.');
+        //     return Command::FAILURE;
+        // } else {
+        //     // Write content to the file
+        //     if (fwrite($fileHandle, $this->structure) === false) {
+        //         $io->error('Failed to create structure class file.');
+        //         return Command::FAILURE;
+        //     } else {
+        //         $io->success('Success.');
+        //         return Command::SUCCESS;
+        //     }
+
+        //     // Close the file handle
+        //     fclose($fileHandle);
+        // }
     }
 }

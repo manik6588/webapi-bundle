@@ -12,11 +12,18 @@
         "symfony/dependency-injection": "^7.0",
         "symfony/config": "^7.0",
         "symfony/console": "^7.0",
-        "symfony/http-kernel": "^7.0"
+        "symfony/http-kernel": "^7.0",
+        "symfony/framework-bundle": "^7.0",
+        "symfony/filesystem": "^7.0"
     },
     "autoload": {
         "psr-4": {
-            "WebAPIBundle\\": "src/"
-        }
+            "WebAPIBundle\\": "src/",
+            "WebAPIBundle\\Interfaces\\": "src/"
+        },
+        "exclude-from-classmap": ["src/Test"]
+    },
+    "require-dev": {
+        "symfony/test-pack": "^1.1"
     }
 }

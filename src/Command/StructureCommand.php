@@ -13,7 +13,7 @@ use Symfony\Component\Filesystem\Filesystem;
 class StructureCommand extends Command
 {
 
-    protected static $defaultName = 'webapi:structure';
+    // protected static $defaultName = 'webapi:structure';
     
     protected string $structure;
 

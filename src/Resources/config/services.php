@@ -1,7 +1,7 @@
 <?php
 
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-use WebAPI\Command\StructureCommand;
+use WebAPIBundle\Command\StructureCommand;
 
 return function (ContainerConfigurator $configurator)
 {

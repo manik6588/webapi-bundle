@@ -13,7 +13,7 @@ use Symfony\Component\Filesystem\Filesystem;
 class StructureCommand extends Command
 {
 
-    protected static $defaultName = 'webapi:structure:create';
+    protected static $defaultName = 'webapi:structure';
     
     protected string $structure;
 
@@ -25,7 +25,7 @@ class StructureCommand extends Command
 
     protected function configure()
     {
-        $this->setName('webapi:structure:create');
+        $this->setName('webapi:structure');
         $this->setDescription('Generates the Structure class.');
         $this->setHelp('Type webapi:make:structure [Structure Class Name] to generate the structure class.');
         $this->addArgument('class', InputArgument::REQUIRED, 'Structure Class name.');
@@ -161,24 +161,5 @@ FUNCTION;
             $io->error($ioe);
             return Command::FAILURE;
         }
-
-        // $fileHandle = fopen($filePath, "w");
-
-        // if ($fileHandle === false) {
-        //     $io->error('Failed to create structure class file.');
-        //     return Command::FAILURE;
-        // } else {
-        //     // Write content to the file
-        //     if (fwrite($fileHandle, $this->structure) === false) {
-        //         $io->error('Failed to create structure class file.');
-        //         return Command::FAILURE;
-        //     } else {
-        //         $io->success('Success.');
-        //         return Command::SUCCESS;
-        //     }
-
-        //     // Close the file handle
-        //     fclose($fileHandle);
-        // }
     }
 }

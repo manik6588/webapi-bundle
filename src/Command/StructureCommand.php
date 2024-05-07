@@ -27,7 +27,7 @@ class StructureCommand extends Command
     {
         $this->setName('webapi:structure');
         $this->setDescription('Generates the Structure class.');
-        $this->setHelp('Type webapi:make:structure [Structure Class Name] to generate the structure class.');
+        $this->setHelp('Type webapi:structure [Structure Class Name] to generate the structure class.');
         $this->addArgument('class', InputArgument::REQUIRED, 'Structure Class name.');
     }
 
@@ -65,12 +65,12 @@ class StructureCommand extends Command
                     }
                 } while (!in_array($fieldType, $translatedFieldTypes));
 
-                $isNullable = $io->ask("The field is nullable", 'true');
+                $isNullable = $io->ask("The field is nullable", "false");
 
                 if ($isNullable === "true") {
                     $isNullable = true;
                 } else if ($isNullable === "false") {
-                    $isNullable = true;
+                    $isNullable = false;
                 } else {
                     $io->error("Only 'true' or 'false' inputs will be accepted.");
                 }

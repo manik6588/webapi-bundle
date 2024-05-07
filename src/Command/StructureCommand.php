@@ -117,6 +117,7 @@ class StructureCommand extends Command
         $translate = $this->translateNames($name);
         $type_condition = ($null ? '?' : '') . $type;
         $this->structure .= <<<FUNCTION
+        
     public function set{$translate[1]}({$type} \${$translate[0]}): void
     {
         \$this->{$translate[0]} = \${$translate[0]};

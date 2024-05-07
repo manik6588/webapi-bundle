@@ -79,6 +79,7 @@ final class WebAPI implements WebAPIInterface
 
     public function getRawJson(): array
     {
+        $this->retrieveAttributes();
         return $this->data;
     }
 }

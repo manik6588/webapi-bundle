@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 interface WebAPIInterface
 {
     /**
-     * Set the status code of the API response
+     * To set the status code of the API response.
      *
      * @param int $code
      * @return WebAPIInterface
@@ -15,7 +15,12 @@ interface WebAPIInterface
     public function setStatusCode(int $code): self;
 
     /**
-     * Build API response with structure class. It's improve security of API.
+     * To get input data as raw JSON array without response headers.
+     */
+    public function getRawJson(): array;
+
+    /**
+     * Builds an API response with a structure class and improves security.
      * @return JsonResponse
      */
     public function publish(): JsonResponse;

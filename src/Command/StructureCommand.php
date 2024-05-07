@@ -136,7 +136,7 @@ FUNCTION;
     {
         $this->structure = "<?php \n\n";
         $this->structure .= "namespace App\Structure; \n\n";
-        $this->structure .= "use WebAPI\Attribute as WebAPI; \n\n";
+        $this->structure .= "use WebAPIBundle\Attribute as WebAPI; \n\n";
         $this->generateClass($className, $functions);
     }
 

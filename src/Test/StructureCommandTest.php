@@ -16,7 +16,7 @@ final class StructureCommandTest extends TestCase
 
         $application->add(new StructureCommand());
 
-        $command = $application->find('webapi:structure:create');
+        $command = $application->find('webapi:structure');
 
         $commandTester = new CommandTester($command);
 

@@ -2,7 +2,7 @@
 
 use App\Structure\TestStructure;
 use PHPUnit\Framework\TestCase;
-use WebAPIBundle\WebAPI;
+use WebAPI\Bundle\WebAPI;
 
 final class WebAPITest extends TestCase
 {

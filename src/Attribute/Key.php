@@ -1,6 +1,6 @@
 <?php
 
-namespace WebAPIBundle\Attribute;
+namespace WebAPI\Bundle\Attribute;
 
 #[\Attribute]
 final class Key

@@ -1,35 +1,33 @@
 {
     "name": "webapi/webapi-bundle",
     "type": "symfony-bundle",
-    "version": "1.0.0",
-    "authors": [
-        {
-            "name": "manik6588",
-            "email": "manikandan6588@proton.me"
-        }
-    ],
     "require": {
-        "symfony/dependency-injection": "^7.0",
-        "symfony/config": "^7.0",
-        "symfony/console": "^7.0",
-        "symfony/http-kernel": "^7.0",
         "symfony/framework-bundle": "^7.0",
-        "symfony/filesystem": "^7.0",
-        "symfony/runtime": "^7.0"
+        "symfony/serializer": "^7.0",
+        "symfony/flex": "^2.4",
+        "symfony/console": "^7.0"
     },
     "autoload": {
         "psr-4": {
-            "WebAPIBundle\\": "src/",
-            "WebAPIBundle\\Interfaces\\": "src/"
-        },
-        "exclude-from-classmap": ["src/Test"]
+            "WebAPI\\Bundle\\": "src/",
+            "WebAPI\\Bundle\\Interfaces\\": "src/"
+        }
     },
-    "require-dev": {
-        "symfony/test-pack": "^1.1"
-    },
+    "authors": [
+        {
+            "name": "Manikandan",
+            "email": "145263898+manik6588@users.noreply.github.com"
+        }
+    ],
     "config": {
         "allow-plugins": {
-            "symfony/runtime": true
+            "symfony/flex": true
+        }
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
         }
     }
 }

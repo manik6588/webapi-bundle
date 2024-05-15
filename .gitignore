@@ -1,8 +1,18 @@
-
+bin/
 .vscode
-
+src.old/
 vendor/
 composer.lock
 phpunit.xml
 old
 src/Structure/
+###> symfony/framework-bundle ###
+symfony.lock
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###

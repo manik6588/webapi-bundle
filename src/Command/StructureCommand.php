@@ -1,6 +1,6 @@
 <?php
 
-namespace WebAPIBundle\Command;
+namespace WebAPI\Bundle\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -13,7 +13,6 @@ use Symfony\Component\Filesystem\Filesystem;
 class StructureCommand extends Command
 {
 
-    // protected static $defaultName = 'webapi:structure';
     
     protected string $structure;
 

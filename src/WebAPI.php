@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace WebAPIBundle;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
-use WebAPIBundle\Attribute\Key;
-use WebAPIBundle\Interfaces\WebAPIInterface;
+use WebAPI\Bundle\Attribute\Key;
+use WebAPI\Bundle\Interfaces\WebAPIInterface;
 
 final class WebAPI implements WebAPIInterface
 {

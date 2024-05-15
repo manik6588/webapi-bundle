@@ -1,0 +1,3 @@
+services:
+  WebAPI\Bundle\Command\StructureCommand:
+    tags: ['console.command']

@@ -1,6 +1,6 @@
 <?php
 
-namespace WebAPIBundle\Interfaces;
+namespace WebAPI\Bundle\Interfaces;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WebAPIBundle;
+namespace WebAPI\Bundle;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
 use WebAPI\Bundle\Attribute\Key;

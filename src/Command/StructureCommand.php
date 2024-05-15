@@ -22,7 +22,7 @@ class StructureCommand extends Command
         parent::__construct();
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this->setName('webapi:structure');
         $this->setDescription('Generates the Structure class.');
@@ -136,7 +136,7 @@ FUNCTION;
     {
         $this->structure = "<?php \n\n";
         $this->structure .= "namespace App\Structure; \n\n";
-        $this->structure .= "use WebAPIBundle\Attribute as WebAPI; \n\n";
+        $this->structure .= "use WebAPI\Bundle\Attribute as WebAPI; \n\n";
         $this->generateClass($className, $functions);
     }
 

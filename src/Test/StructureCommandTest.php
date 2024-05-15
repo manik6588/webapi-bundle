@@ -5,7 +5,7 @@ declare(strict_types=1);
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
-use WebAPIBundle\Command\StructureCommand;
+use WebAPI\Bundle\Command\StructureCommand;
 
 final class StructureCommandTest extends TestCase
 {

@@ -117,9 +117,11 @@ class StructureCommand extends Command
         $type_condition = ($null ? '?' : '') . $type;
         $this->structure .= <<<FUNCTION
         
-    public function set{$translate[1]}({$type} \${$translate[0]}): void
+    public function set{$translate[1]}({$type} \${$translate[0]}): static
     {
         \$this->{$translate[0]} = \${$translate[0]};
+
+        return \$this;
     }
     
     #[WebAPI\Key(name: '{$translate[0]}')]
